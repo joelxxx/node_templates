@@ -6,10 +6,12 @@ The idea here is to build up to using
   express
   template language (underscore and mustache look to be the leaders right now)
   backbone (for the data models)
-
 Then build up to having template language with partials
   that should do it for replacing bind
-  
+
+
+Here are the directories and what's in them so far
+
 
 basic
   a basic node app with express
