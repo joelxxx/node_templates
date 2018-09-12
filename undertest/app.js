@@ -1,15 +1,15 @@
 const express = require('express')
 const app = express()
 
-var u = require("underscore");
-var _ = require("lodash");
-var fs = require('fs');
+let u = require("underscore");
+let _ = require("lodash");
+let fs = require('fs');
+let port = 3000;
 
 
-
-var rtemp = fs.readFileSync('/Users/JoelS/code/sisyphus/migrate/undertest/index.html','utf8')
-var template = _.template(rtemp);
-var tdata = {
+let rtemp = fs.readFileSync('/Users/curtismorice/Documents/node_templates/undertest/index.html','utf8')
+let template = _.template(rtemp);
+let tdata = {
     listTitle: "Olympic Volleyball Players",
     listItems: [
         {
@@ -27,15 +27,48 @@ var tdata = {
         {
             name: "April Ross",
             hasOlympicGold: false
-        }
+        },
+        {
+            name:  "Curtis Morice",
+            hasOlympicGold: true
+        },
+        {
+            name:  "Curtis Morice",
+            hasOlympicGold: true
+        },
+        {
+            name:  "Curtis Morice",
+            hasOlympicGold: true
+        },
+        {
+            name:  "Curtis Morice",
+            hasOlympicGold: true
+        },
+        {
+            name:  "Curtis Morice",
+            hasOlympicGold: true
+        },
+        {
+            name:  "Curtis Morice",
+            hasOlympicGold: true
+        },
+        {
+            name:  "Curtis Morice",
+            hasOlympicGold: true
+        },
+        
     ]  
 }
 
-var templateString = template(tdata);
+let templateString = template(tdata);
+
+app.use(express.static('undertest'));
+
+app.get('/', (req, res) => res.send(templateString));
+
+app.listen(port, () => console.log(`Example app listening on port 3000:${port}`));
+
+
 
 //app.get('/', (req, res) => res.send('Hello World!'))
 //app.get('/', (req, res) => res.sendFile('/Users/JoelS/code/sisyphus/migrate/undertest/index.html'))
-app.get('/', (req, res) => res.send(templateString));
-
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
-
