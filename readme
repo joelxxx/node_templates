@@ -1,0 +1,37 @@
+Migration off bind, preparation
+
+
+The idea here is to build up to using
+  node
+  express
+  template language (underscore and mustache look to be the leaders right now)
+  backbone (for the data models)
+
+Then build up to having template language with partials
+  that should do it for replacing bind
+  
+
+basic
+  a basic node app with express
+  https://expressjs.com/en/starter/installing.html
+
+
+undertest
+  uses underscore and does server side template application
+
+  https://www.bennadel.com/blog/2411-using-underscore-js-templates-to-render-html-partials.htm
+  https://seanmcgary.com/posts/sharing-underscore-templates-between-client-and-server/
+
+
+
+===== not yet working ====================
+
+hello_underscore
+  uses backbone and underscore
+  http://stephanielkim.tumblr.com/post/39175133744/a-humble-hello-world-backbonejs-example
+
+
+
+underscore_partials
+  https://github.com/seanmcgary/node-partials.git
+

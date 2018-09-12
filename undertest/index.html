@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Looking At Underscore.js Templates</title>
+</head>
+<body>
+
+<h1>
+    Looking At Underscore.js Templates
+</h1>
+
+
+
+    <h2>
+        <%- listTitle %>
+    </h2>
+
+    <ul>
+        <% _.each( listItems, function( listItem ){ %>
+
+            <li>
+
+                <%- listItem.name %>
+
+                <% if ( listItem.hasOlympicGold ){ %>
+                    <em>*</em>
+                <% } %>
+
+            </li>
+
+        <% }); %>
+    </ul>
+
+
+    <ul>
+        <% for (var i = 0; i < listItems.length; i++) { %>
+            <li>
+                <%- listItems[i].name %>
+                <% if ( listItems[i].hasOlympicGold ){ %>
+                    <em>*</em>
+                <% } %>
+            </li>
+        <% } %>
+     </ul>
+
+
+    <% var showFootnote = 
+        _.map( listItems, "hasOlympicGold" ).length > 0;
+     %>
+
+
+    <% if ( showFootnote ){ %>
+
+        <p style="font-size: 12px ;">
+
+            <em>* Olympic gold medalist</em>
+
+        </p>
+
+    <% } %>
+
+
+</body>
+</html>
