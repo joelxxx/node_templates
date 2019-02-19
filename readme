@@ -1,5 +1,19 @@
 Migration off bind, preparation
 
+NEXT_STEPS
+  one template
+√    review and re-run undertest
+√    add some new models to undertest like the youtube
+    try and use backbone view with underscore template....
+    
+    setup that model and do stuff with it
+    name them like sisbot etc
+  partials
+    get one html to load in another and show it
+    set it up to do so conditionally
+    make tabs at the bottom and swappy it
+
+  
 
 The idea here is to build up to using
   node
@@ -13,23 +27,34 @@ Then build up to having template language with partials
 Here are the directories and what's in them so far
 
 
-basic
+
+basic  (with NODE DEBUGGING)
   a basic node app with express
   https://expressjs.com/en/starter/installing.html
+  node --inspect app.js
+  then in chrome, new tab and  chrome://inspect
+    chrome will list app.js under targets, click that and it opens debugger tools
+
 
 
 undertest
+  node app.js
+  
   uses underscore and does server side template application
 
   https://www.bennadel.com/blog/2411-using-underscore-js-templates-to-render-html-partials.htm
   https://seanmcgary.com/posts/sharing-underscore-templates-between-client-and-server/
 
 
+===== steps ==============================
+1. basic backbone
+2. with underscore
+
 
 ===== not yet working ====================
 
 hello_underscore
-  uses backbone and underscore
+  uses backbone and underscore  CLIENT SIDE
   http://stephanielkim.tumblr.com/post/39175133744/a-humble-hello-world-backbonejs-example
 
 
