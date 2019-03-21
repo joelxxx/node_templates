@@ -5,6 +5,6 @@
     },
     "categories": { 
       "default": { "appenders": ["cheese"], "level": "error" },
-      "mybot": {"appenders": ["botski"], "level": "trace"}  
+      "mybot": {"appenders": ["botski"], "level": "error"}  
     }
 }

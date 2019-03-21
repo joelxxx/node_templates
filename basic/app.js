@@ -1,34 +1,16 @@
 const express = require('express')
 const app = express()
 const log4js = require('log4js');
-// var logconf = require('./config.json')
-var fs = require("fs");
-var logconf = read_log_settings();
-console.log("checking logconf");
-console.log(logconf);
-
-// log4js.configure(logconf);
+const logconf = require('./config.json')
+const fs = require("fs");
 
 
-//file to export config obj and reread function
-// var logger = require('./logging');
-// // var logconf = logger.config;
-// // log4js.configure(logger.config);
-
-// console.log("checking logger");
-// console.log(logger.config);
+log4js.configure(logconf);
 
 
-// fs.watch("./config.json", (curr, prev) => {
-fs.watch("./logging.js", (curr, prev) => {
-  console.log("file changed");
-  // delete require.cache[require.resolve('./config.json')];
-  // logconf = require('./config.json');
-  delete require.cache[require.resolve('./logging.js')];
-  logconf = require('./logging.js');
-
-  console.log("rerequired");
-  console.log(logger.config);
+fs.watch("./config.json", (curr, prev) => {
+  console.log("config.json file changed");
+  read_and_apply_new_log_settings();   
 })
 
 const mainLog = log4js.getLogger('cheese');
@@ -90,8 +72,13 @@ function changelevel(request, response){
 
 }
 
-// function readread_log_settings(request, response){
-function read_log_settings(){
+function readread_log_settings(request, response){
+
+  read_and_apply_new_log_settings();   
+  response.send('Read the log settings file!');
+}
+
+function read_and_apply_new_log_settings(){
 
   console.log("reading logger config");
 
@@ -102,19 +89,14 @@ function read_log_settings(){
     }
 
     // debugger;
-    var testData = JSON.parse(data.toString())
+    var newconfig = JSON.parse(data.toString())
     console.log('reading config: read_log_settings');
-    // return JSON.parse(data.toString());
-    console.log(testData);
-    // log4js.configure(logconf);
-    // return testData;
-  });
-
-    
-    
-
-  
+    console.log(newconfig);
+    console.log("----------------------------");
+    log4js.configure(newconfig);
+  }); 
 }
+
 
 mainLog.trace('Entering cheese testing');
 mainLog.debug('Got cheese.');
