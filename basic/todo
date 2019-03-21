@@ -11,7 +11,7 @@ Log into the table using ssh
 5. you can delete them to start over   
   sudo rm -fr /var/log/sisyphus/*
 6. you can restart the bot using
-  cd ~/sisyphus/sisproxy   (not sure of first part of this path)
+  cd ~/sisbot-server/sisproxy
   sudo ./restart.sh &
 
 We have 3 files. 
@@ -26,11 +26,11 @@ The idea is to replace the current logEvent with calls to the new logging system
   line 182 looks like a good place
 3. After you change code is sisbot, you have to 
   sudo rm -fr /var/log/sisyphus/*
-  cd ../sisproxy 
+  cd ~/sisbot-server/sisproxy 
   sudo ./restart.sh &
 
   the look in their logs /var/log/sisyphus/*
   and in your logs configured for wherever you put the cheese log file
-  
+
 4. If you get that working, try and call new logging from sisbot.js file
 
