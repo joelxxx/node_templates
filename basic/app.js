@@ -6,16 +6,16 @@ var logconf = require('./config.json')
 // var logger = log4js.getLogger();
 // logger.level = 'info';
 
-var conf = {
-  appenders: { 
-    cheese: { type: 'file', filename: 'cheese.log' } ,
-    botski: { type: 'file', filename: 'mybot.log'}
-  },
-  categories: { 
-    default: { appenders: ['cheese'], level: 'info' },
-    test2: {appenders: ['botski'], level: 'trace'}  
-  }
-};
+// var conf = {
+//   appenders: { 
+//     cheese: { type: 'file', filename: 'cheese.log' } ,
+//     botski: { type: 'file', filename: 'mybot.log'}
+//   },
+//   categories: { 
+//     default: { appenders: ['cheese'], level: 'error' },
+//     test2: {appenders: ['botski'], level: 'error'}  
+//   }
+// };
 
 log4js.configure(logconf);
 
@@ -70,12 +70,12 @@ function readread_log_settings(request, response){
   debugger;
 
 
-    // fs.readFile(require.resolve(path), (err, data) => {
-    //   if (err)
-    //     cb(err)
-    //   else
-    //     cb(null, JSON.parse(data))
-    // })
+  // fs.readFile(require.resolve(path), (err, data) => {
+  //   if (err)
+  //     cb(err)
+  //   else
+  //     cb(null, JSON.parse(data))
+  // })
   
 
 
